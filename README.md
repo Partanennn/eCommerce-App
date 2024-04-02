@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Web Shop Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend for Web Shop Application
+
+## Technologies used
+
+- React: Frontend framework
+- Typescript: Types javascript
+- i18next: Localization library
+- React-Router: Routing library
 
 ## Available Scripts
 
