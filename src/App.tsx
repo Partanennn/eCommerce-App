@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './localization/localization';
 import HomePage from './pages/Home/HomePage';
 
 const App = () => (
