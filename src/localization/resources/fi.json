@@ -1,3 +1,8 @@
 {
-  "Header": "Webbi Kauppa Sovellus"
+  "header": "Webbi Kauppa Sovellus",
+  "navbar": {
+    "phones": "Puhelimet",
+    "tablets": "Tabletit",
+    "accesories": "Tarvikkeet"
+  }
 }
