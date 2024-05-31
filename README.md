@@ -8,6 +8,7 @@ Frontend for Web Shop Application
 - Typescript: Types javascript
 - i18next: Localization library
 - React-Router: Routing library
+- Zustand: State handler
 
 ## Available Scripts
 
