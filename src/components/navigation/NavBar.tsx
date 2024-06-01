@@ -1,4 +1,4 @@
-import AdbIcon from '@mui/icons-material/Adb';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 import MenuIcon from '@mui/icons-material/Menu';
 import CartIcon from '@mui/icons-material/ShoppingCart';
 
@@ -15,12 +15,20 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router';
+import { useThemeStore } from '../../state/themeStore';
 
-const pages = ['phones', 'tablets', 'accesories'];
+const pages = [
+  { text: 'phones', link: '' },
+  { text: 'tablets', link: '' },
+  { text: 'accesories', link: '' },
+];
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const changeTheme = useThemeStore((set) => set.toggleTheme);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -30,23 +38,35 @@ const NavBar = () => {
     setAnchorElNav(null);
   };
 
+  const handleItemClick = (link: string) => {
+    navigate(link);
+  };
+
+  const handleThemeChange = () => {
+    changeTheme();
+  };
+
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ marginBottom: '0.7rem' }}>
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
+          <IconButton
+            onClick={() => handleItemClick('/')}
+            sx={{ color: 'white' }}
           >
-            LOGO
-          </Typography>
+            <Typography
+              sx={{
+                mr: 2,
+                display: { xs: 'none', md: 'flex' },
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              LOGO
+            </Typography>
+          </IconButton>
           {/* Hamburger menu */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -78,15 +98,17 @@ const NavBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem
+                  key={page.text}
+                  onClick={() => handleItemClick(page.link)}
+                >
                   <Typography textAlign="center">
-                    {t(`navbar.${page}`)}
+                    {t(`navbar.${page.text}`)}
                   </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' } }} />
           <Typography
             variant="h5"
             noWrap
@@ -108,16 +130,19 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={page.text}
+                onClick={() => handleItemClick(page.link)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {t(`navbar.${page}`)}
+                {t(`navbar.${page.text}`)}
               </Button>
             ))}
           </Box>
+          <IconButton onClick={handleThemeChange}>
+            <DarkModeIcon sx={{ color: '#fff' }} />
+          </IconButton>
           <IconButton sx={{ p: 0 }}>
-            <CartIcon />
+            <CartIcon sx={{ color: '#fff' }} />
           </IconButton>
         </Toolbar>
       </Container>
