@@ -48,7 +48,7 @@ const NavBar = () => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ marginBottom: '0.7rem' }}>
         <Toolbar disableGutters>
           <IconButton
             onClick={() => handleItemClick('/')}

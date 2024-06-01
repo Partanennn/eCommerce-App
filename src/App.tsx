@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@emotion/react';
+import { CssBaseline } from '@mui/material';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { ContentContainer } from './components/ContentContainer';
@@ -15,6 +16,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={selectedTheme}>
+      <CssBaseline />
       <BrowserRouter>
         <NavBar />
         <ContentContainer>
