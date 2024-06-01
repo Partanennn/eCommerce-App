@@ -4,6 +4,7 @@ import CartIcon from '@mui/icons-material/ShoppingCart';
 
 import {
   AppBar,
+  Badge,
   Box,
   Button,
   Container,
@@ -16,6 +17,7 @@ import {
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
+import { useCartStore } from '../../store/cartStore/cartStore';
 import { useThemeStore } from '../../store/themeStore/themeStore';
 
 const pages = [
@@ -28,7 +30,8 @@ const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const changeTheme = useThemeStore((set) => set.toggleTheme);
+  const changeTheme = useThemeStore((state) => state.toggleTheme);
+  const cartItemCount = useCartStore((state) => state.itemCount);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -141,9 +144,11 @@ const NavBar = () => {
           <IconButton onClick={handleThemeChange}>
             <DarkModeIcon sx={{ color: '#fff' }} />
           </IconButton>
-          <IconButton sx={{ p: 0 }}>
-            <CartIcon sx={{ color: '#fff' }} />
-          </IconButton>
+          <Badge badgeContent={cartItemCount}>
+            <IconButton sx={{ p: 0 }}>
+              <CartIcon sx={{ color: '#fff' }} />
+            </IconButton>
+          </Badge>
         </Toolbar>
       </Container>
     </AppBar>

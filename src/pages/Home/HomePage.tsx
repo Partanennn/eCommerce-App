@@ -1,14 +1,7 @@
-import { Grid, Typography } from '@mui/material';
-import { useCartStore } from '../../store/cartStore/cartStore';
+import { Grid } from '@mui/material';
 
 const HomePage = () => {
-  const itemCount = useCartStore((state) => state.itemCount);
-
-  return (
-    <Grid height={'100vh'}>
-      <Typography variant="body1">{itemCount}</Typography>
-    </Grid>
-  );
+  return <Grid height={'100vh'}></Grid>;
 };
 
 export default HomePage;
