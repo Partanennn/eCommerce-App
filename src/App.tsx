@@ -6,7 +6,7 @@ import { ContentContainer } from './components/ContentContainer';
 import NavBar from './components/navigation/NavBar';
 import './localization/localization';
 import HomePage from './pages/Home/HomePage';
-import { useThemeStore } from './state/themeStore';
+import { useThemeStore } from './store/themeStore/themeStore';
 import { darkTheme, lightTheme } from './theme/theme';
 
 const App = () => {
