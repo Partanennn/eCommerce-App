@@ -16,7 +16,7 @@ import {
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
-import { useThemeStore } from '../../state/themeStore';
+import { useThemeStore } from '../../store/themeStore/themeStore';
 
 const pages = [
   { text: 'phones', link: '' },

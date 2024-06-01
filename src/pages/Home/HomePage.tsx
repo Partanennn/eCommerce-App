@@ -1,8 +1,8 @@
 import { Grid, Typography } from '@mui/material';
-import { useItemStore } from '../../state/itemState';
+import { useCartStore } from '../../store/cartStore/cartStore';
 
 const HomePage = () => {
-  const itemCount = useItemStore((state) => state.itemCount);
+  const itemCount = useCartStore((state) => state.itemCount);
 
   return (
     <Grid height={'100vh'}>
