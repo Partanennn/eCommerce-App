@@ -3,6 +3,9 @@
 # No need for this
 package-lock.json
 
+# User own settings
+.vscode
+
 # dependencies
 /node_modules
 /.pnp

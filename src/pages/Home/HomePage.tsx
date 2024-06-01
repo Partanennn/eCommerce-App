@@ -1,11 +1,14 @@
-import { useTranslation } from 'react-i18next';
+import { Grid, Typography } from '@mui/material';
+import { useItemStore } from '../../state/itemState';
 
 const HomePage = () => {
-  const { t } = useTranslation();
+  const itemCount = useItemStore((state) => state.itemCount);
+
   return (
-    <div>
-      <h1>{t('header')}</h1>
-    </div>
+    // Remove height when not needed anymore
+    <Grid height={'100vh'}>
+      <Typography>{itemCount}</Typography>
+    </Grid>
   );
 };
 
