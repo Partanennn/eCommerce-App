@@ -1,6 +1,6 @@
-# Web Shop Frontend
+# eCommerce App
 
-Frontend for Web Shop Application
+Frontend for eCommerce Application
 
 ## Technologies used
 
