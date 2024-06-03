@@ -6,6 +6,10 @@ package-lock.json
 # User own settings
 .vscode
 
+# dotenv file
+.env.*
+.env
+
 # dependencies
 /node_modules
 /.pnp
