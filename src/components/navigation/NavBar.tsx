@@ -41,7 +41,7 @@ const NavBar = () => {
     setAnchorElNav(null);
   };
 
-  const handleItemClick = (link: string) => {
+  const handleNavClick = (link: string) => {
     navigate(link);
   };
 
@@ -51,10 +51,10 @@ const NavBar = () => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl" sx={{ marginBottom: '0.7rem' }}>
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
           <IconButton
-            onClick={() => handleItemClick('/')}
+            onClick={() => handleNavClick('/')}
             sx={{ color: 'white' }}
           >
             <Typography
@@ -71,7 +71,12 @@ const NavBar = () => {
             </Typography>
           </IconButton>
           {/* Hamburger menu */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'flex', md: 'none' },
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -103,7 +108,7 @@ const NavBar = () => {
               {pages.map((page) => (
                 <MenuItem
                   key={page.text}
-                  onClick={() => handleItemClick(page.link)}
+                  onClick={() => handleNavClick(page.link)}
                 >
                   <Typography textAlign="center">
                     {t(`navbar.${page.text}`)}
@@ -115,8 +120,8 @@ const NavBar = () => {
           <Typography
             variant="h5"
             noWrap
+            onClick={() => handleNavClick('/')}
             component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -134,7 +139,7 @@ const NavBar = () => {
             {pages.map((page) => (
               <Button
                 key={page.text}
-                onClick={() => handleItemClick(page.link)}
+                onClick={() => handleNavClick(page.link)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {t(`navbar.${page.text}`)}

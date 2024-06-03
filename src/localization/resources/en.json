@@ -4,5 +4,8 @@
     "phones": "Phones",
     "tablets": "Tablets",
     "accesories": "Accesories"
+  },
+  "general": {
+    "loading": "Loading"
   }
 }

@@ -4,5 +4,8 @@
     "phones": "Puhelimet",
     "tablets": "Tabletit",
     "accesories": "Tarvikkeet"
+  },
+  "general": {
+    "loading": "Ladataan"
   }
 }
