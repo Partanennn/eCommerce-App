@@ -4,7 +4,7 @@ import { ContentContainer } from '../components/ContentContainer';
 const HomePage = () => {
   return (
     <ContentContainer>
-      <Grid height={'100vh'}></Grid>
+      <Grid height={'80vh'}>This is homepage!</Grid>
     </ContentContainer>
   );
 };
