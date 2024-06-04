@@ -9,7 +9,7 @@ export const ContentContainer = ({ children }: ContentContainerProps) => {
   const theme = useTheme();
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} marginTop={0}>
       <Grid
         item
         xs={2}
