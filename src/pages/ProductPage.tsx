@@ -13,7 +13,7 @@ export const ProductPage = () => {
     queryKey: ['product', parseInt(productId!)],
     queryFn: () => getProduct(productId),
   });
-  console.log({ data, isLoading });
+
   return (
     <Grid
       container
