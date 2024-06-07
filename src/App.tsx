@@ -2,10 +2,10 @@ import { ThemeProvider } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { ContentContainer } from './components/ContentContainer';
 import NavBar from './components/navigation/NavBar';
 import './localization/localization';
-import HomePage from './pages/Home/HomePage';
+import HomePage from './pages/HomePage';
+import { ProductPage } from './pages/ProductPage';
 import { useThemeStore } from './store/themeStore/themeStore';
 import { darkTheme, lightTheme } from './theme/theme';
 
@@ -19,11 +19,10 @@ const App = () => {
       <CssBaseline />
       <BrowserRouter>
         <NavBar />
-        <ContentContainer>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-          </Routes>
-        </ContentContainer>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/product/:productId" element={<ProductPage />} />
+        </Routes>
       </BrowserRouter>
     </ThemeProvider>
   );

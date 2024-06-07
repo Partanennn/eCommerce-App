@@ -11,6 +11,10 @@ export const lightTheme = createTheme({
     },
     background: {
       paper: '#fbfbfb',
+      light: '#efefef',
+    },
+    text: {
+      action: '#D20000',
     },
   },
 });
@@ -20,6 +24,10 @@ export const darkTheme = createTheme({
     mode: 'dark',
     background: {
       paper: '#161616',
+      light: '#161616',
+    },
+    text: {
+      action: '#D20000',
     },
   },
 });

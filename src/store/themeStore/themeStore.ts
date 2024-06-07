@@ -1,7 +1,9 @@
 import { create } from 'zustand';
 
+export type ThemeModes = 'light' | 'dark';
+
 interface ThemeState {
-  theme: 'light' | 'dark';
+  theme: ThemeModes;
   toggleTheme: () => void;
 }
 
