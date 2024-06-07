@@ -1,13 +1,13 @@
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, useTheme } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
-import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router';
 import { getProduct } from '../api/products/getProduct';
+import { ProductInfo } from '../components/product/ProductInfo';
 
 export const ProductPage = () => {
   const { productId } = useParams();
 
-  const { t } = useTranslation();
+  const theme = useTheme();
 
   const { data, isLoading, error } = useQuery({
     queryKey: ['product', parseInt(productId!)],
@@ -18,11 +18,10 @@ export const ProductPage = () => {
     <Grid
       container
       sx={{
-        backgroundColor: '#F6F9FC',
+        backgroundColor: theme.palette.background.light,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: '0.3rem',
       }}
     >
       <Grid
@@ -37,18 +36,26 @@ export const ProductPage = () => {
           component="img"
           src={data?.image}
           sx={{
-            width: 'auto',
-            height: 'auto',
-            maxHeight: '30rem',
+            width: { xs: '20rem', sm: '25rem', md: '30rem' },
+            height: { xs: '20rem', sm: '25rem', md: '30rem' },
+            objectFit: 'contain',
             padding: {
               xs: '4rem',
               sm: '6rem',
             },
           }}
         />
+        {/** Image selection here */}
       </Grid>
-      <Grid item xs={12} md={6}>
-        dsa
+      <Grid
+        item
+        xs={12}
+        md={6}
+        sx={{
+          padding: { xs: '1.5rem', md: '0' },
+        }}
+      >
+        {data !== undefined ? <ProductInfo product={data} /> : ''}
       </Grid>
     </Grid>
   );

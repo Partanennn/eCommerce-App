@@ -1,12 +1,20 @@
 import axios from 'axios';
 
 export interface IProduct {
-  id: number;
-  title: string;
-  price: number;
   category: string;
   description: string;
+  discountPercent?: number;
+  id: number;
   image: string;
+  rating: IRating;
+  title: string;
+  price: number;
+  stock?: number;
+}
+
+export interface IRating {
+  rate: number;
+  count: number;
 }
 
 export const getProduct = async (productId?: string) => {

@@ -7,5 +7,15 @@
   },
   "general": {
     "loading": "Loading"
+  },
+  "product-info": {
+    "brand": "Brand",
+    "rated": "Rated",
+    "option": "Option",
+    "type": "Type",
+    "stock-available": "Stock available",
+    "out-of-stock": "Out of stock",
+    "add-to-cart": "Add To Cart",
+    "sold-by": "Sold by"
   }
 }

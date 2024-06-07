@@ -7,5 +7,15 @@
   },
   "general": {
     "loading": "Ladataan"
+  },
+  "product-info": {
+    "brand": "Brändi",
+    "rated": "Arvostelu",
+    "option": "Vaihtoehto",
+    "type": "Tyyppi",
+    "stock-available": "Varastossa",
+    "out-of-stock": "Loppu varastosta",
+    "add-to-cart": "Lisää koriin",
+    "sold-by": "Myyjä"
   }
 }
