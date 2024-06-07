@@ -1,6 +1,7 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { IProduct } from '../../api/products/getProduct';
+import { AddToCartButton } from './AddToCartButton';
 import { IOption, Options } from './Options';
 import { Price } from './Price';
 import { Review } from './Review';
@@ -40,14 +41,16 @@ export const ProductInfo = ({ product }: IProductInfo) => {
         </Box>
         <Review product={product} />
       </Box>
-      <Box marginTop={'1.2rem'}>
-        <Options options={mockOptions} />
-      </Box>
+      {product.options && (
+        <Box marginTop={'1.2rem'}>
+          <Options options={mockOptions} />
+        </Box>
+      )}
       <Box marginTop={'1.2rem'}>
         <Price price={product.price} stock={product.stock || 0} />
       </Box>
       <Box marginTop={'1.4rem'}>
-        <Button variant="contained">{t('product-info.add-to-cart')}</Button>
+        <AddToCartButton product={product} />
       </Box>
       <Box></Box>
     </Box>

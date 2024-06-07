@@ -1,10 +1,11 @@
 import { create } from 'zustand';
+import { IProduct } from '../../api/products/getProduct';
 
 interface CartStore {
   itemCount: number;
-  items: string[];
-  addItem: (newItem: string) => void;
-  removeItem: (item: string) => void;
+  items: IProduct[];
+  addItem: (newItem: IProduct) => void;
+  removeItem: (item: IProduct) => void;
   resetCart: () => void;
 }
 
@@ -16,7 +17,7 @@ export const useCartStore = create<CartStore>((set) => ({
       items: [...state.items, newItem],
       itemCount: state.itemCount + 1,
     })),
-  removeItem: (item: string) =>
+  removeItem: (item) =>
     set((state) => {
       const index = state.items.indexOf(item);
       if (index >= 0) {

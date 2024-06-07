@@ -26,5 +26,8 @@ export const darkTheme = createTheme({
       paper: '#161616',
       light: '#161616',
     },
+    text: {
+      action: '#D20000',
+    },
   },
 });

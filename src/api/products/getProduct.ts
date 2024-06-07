@@ -6,10 +6,11 @@ export interface IProduct {
   discountPercent?: number;
   id: number;
   image: string;
-  rating: IRating;
-  title: string;
+  options?: string[];
   price: number;
+  rating: IRating;
   stock?: number;
+  title: string;
 }
 
 export interface IRating {
