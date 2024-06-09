@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage';
 import { ProductPage } from './pages/ProductPage';
 import { useThemeStore } from './store/themeStore/themeStore';
 import { darkTheme, lightTheme } from './theme/theme';
+import NotFound from './pages/NotFound'
 
 const App = () => {
   const themeMode = useThemeStore((set) => set.theme);
@@ -22,6 +23,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/product/:productId" element={<ProductPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
