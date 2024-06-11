@@ -18,5 +18,8 @@
     "out-of-stock": "Loppu varastosta",
     "add-to-cart": "Lisää koriin",
     "sold-by": "Myyjä"
+  },
+  "not-found-page": {
+    "title": "404: Sivustoa ei löytynyt"
   }
 }
