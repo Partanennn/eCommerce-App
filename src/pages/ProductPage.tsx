@@ -9,7 +9,7 @@ export const ProductPage = () => {
 
   const theme = useTheme();
 
-  const { data, isLoading, error } = useQuery({
+  const { data } = useQuery({
     queryKey: ['product', parseInt(productId!)],
     queryFn: () => getProduct(productId),
   });

@@ -18,13 +18,8 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import { useCartStore } from '../../store/cartStore/cartStore';
+import { categoriesStore } from '../../store/categoriesStore/categoriesStore';
 import { useThemeStore } from '../../store/themeStore/themeStore';
-
-const pages = [
-  { text: 'phones', link: '' },
-  { text: 'tablets', link: '' },
-  { text: 'accesories', link: '' },
-];
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -32,6 +27,7 @@ const NavBar = () => {
   const navigate = useNavigate();
   const changeTheme = useThemeStore((state) => state.toggleTheme);
   const cartItemCount = useCartStore((state) => state.itemCount);
+  const categories = categoriesStore((set) => set.categories);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -105,13 +101,13 @@ const NavBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
+              {categories.map((category) => (
                 <MenuItem
-                  key={page.text}
-                  onClick={() => handleNavClick(page.link)}
+                  key={category}
+                  onClick={() => handleNavClick(category)}
                 >
                   <Typography textAlign="center">
-                    {t(`navbar.${page.text}`)}
+                    {t(`categories.${category}`)}
                   </Typography>
                 </MenuItem>
               ))}
@@ -143,13 +139,13 @@ const NavBar = () => {
               justifyContent: 'center',
             }}
           >
-            {pages.map((page) => (
+            {categories.map((category) => (
               <Button
-                key={page.text}
-                onClick={() => handleNavClick(page.link)}
+                key={category}
+                onClick={() => handleNavClick(category)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {t(`navbar.${page.text}`)}
+                {t(`categories.${category}`)}
               </Button>
             ))}
           </Box>

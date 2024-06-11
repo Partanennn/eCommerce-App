@@ -1,9 +1,10 @@
 {
   "header": "Webbi Kauppa Sovellus",
-  "navbar": {
-    "phones": "Puhelimet",
-    "tablets": "Tabletit",
-    "accesories": "Tarvikkeet"
+  "categories": {
+    "electronics": "Elektroniikka",
+    "jewelery": "Korut",
+    "mens-clothing": "Miesten vaatteet",
+    "womens-clothing": "Naisten vaatteet"
   },
   "general": {
     "loading": "Ladataan"

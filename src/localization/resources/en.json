@@ -1,9 +1,10 @@
 {
   "header": "Web Shop Application",
-  "navbar": {
-    "phones": "Phones",
-    "tablets": "Tablets",
-    "accesories": "Accesories"
+  "categories": {
+    "electronics": "Electronics",
+    "jewelery": "Jewelery",
+    "mens-clothing": "Men's clothes",
+    "womens-clothing": "Women's clothes"
   },
   "general": {
     "loading": "Loading"
