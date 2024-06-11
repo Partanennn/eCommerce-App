@@ -7,12 +7,13 @@ import './App.css';
 import { getCategories } from './api/categories/getCategories';
 import NavBar from './components/navigation/NavBar';
 import './localization/localization';
+import CategoryPage from './pages/CategoryPage';
 import HomePage from './pages/HomePage';
+import NotFound from './pages/NotFound';
 import { ProductPage } from './pages/ProductPage';
 import { categoriesStore } from './store/categoriesStore/categoriesStore';
 import { useThemeStore } from './store/themeStore/themeStore';
 import { darkTheme, lightTheme } from './theme/theme';
-import NotFound from './pages/NotFound'
 
 const App = () => {
   const themeMode = useThemeStore((set) => set.theme);
@@ -38,6 +39,7 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/category/:category" element={<CategoryPage />} />
           <Route path="/product/:productId" element={<ProductPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -104,7 +104,7 @@ const NavBar = () => {
               {categories.map((category) => (
                 <MenuItem
                   key={category}
-                  onClick={() => handleNavClick(category)}
+                  onClick={() => handleNavClick('/category/' + category)}
                 >
                   <Typography textAlign="center">
                     {t(`categories.${category}`)}
@@ -142,7 +142,7 @@ const NavBar = () => {
             {categories.map((category) => (
               <Button
                 key={category}
-                onClick={() => handleNavClick(category)}
+                onClick={() => handleNavClick('/category/' + category)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {t(`categories.${category}`)}
