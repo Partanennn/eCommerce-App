@@ -6,7 +6,8 @@
     "accesories": "Accesories"
   },
   "general": {
-    "loading": "Loading"
+    "loading": "Loading",
+    "not-found": "Not found"
   },
   "product-info": {
     "brand": "Brand",
